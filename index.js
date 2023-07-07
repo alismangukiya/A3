@@ -4,13 +4,13 @@ const router = express.Router();
 
 var app = express();
 
-const connectionConfig = {
-    host: 'localhost',
-    port: '3306',
-    user: 'root',
-    password: 'root',
-    database: 'mydb'
-};
+const db = mysql.createConnection({
+  host: "a3-database-instance-1.couyu5nfg2be.us-east-1.rds.amazonaws.com",
+  user: "admin",
+  password: "admin123",
+  database: "mydb",
+});
+
 
 mysql.createConnection(connectionConfig)
     .then(async (connection) => {
